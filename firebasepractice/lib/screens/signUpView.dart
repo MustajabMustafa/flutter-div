@@ -10,8 +10,8 @@ class SignupView extends StatelessWidget {
     try {
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: semailControl.text,
-        password: spassControl.text,
+        email: semailControl.text.trim(),
+        password: spassControl.text.trim(),
       );
       Navigator.pop(context);
     } on FirebaseAuthException catch (e) {

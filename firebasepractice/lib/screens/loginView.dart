@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebasepractice/screens/homeView.dart';
 import 'package:firebasepractice/screens/signUpView.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +11,10 @@ class LoginView extends StatelessWidget {
   login(context) async {
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: emailControl.text, password: passControl.text);
+          email: emailControl.text.trim(), password: passControl.text.trim());
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => LoginView(),
+          builder: (context) => const HomeView(),
         ),
       );
     } on FirebaseAuthException catch (e) {
