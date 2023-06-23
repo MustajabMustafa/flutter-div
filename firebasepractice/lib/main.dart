@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebasepractice/firebase_options.dart';
-import 'package:firebasepractice/screens/all_products.dart';
+//import 'package:firebasepractice/screens/all_products.dart';
+import 'package:firebasepractice/screens/fileUpload.dart';
+
 //import 'package:firebasepractice/screens/add_product.dart';
 import 'package:flutter/material.dart';
 //import 'package:firebasepractice/screens/loginView.dart';
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Firebase',
-      home: AllProductsView(),
+      home: FileUploadView(),
     );
   }
 }

@@ -23,59 +23,36 @@ class AllProductsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Column(
-        children: [
-          Center(
-            child: FutureBuilder(
-                future: getAllCategories(),
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.hasData) {
-                    return ListView.builder(
-                        itemCount: snapshot.data.docs.length,
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            title: Text(
-                                "${snapshot.data.docs[index]['category']}"),
+      body: Center(
+        child: FutureBuilder(
+            future: getAllProducts(),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                return ListView.builder(
+                    itemCount: snapshot.data.docs.length,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProductDetailVIew(
+                                  data: snapshot.data.docs[index]),
+                            ),
                           );
-                        });
-                  } else {
-                    return const CircularProgressIndicator();
-                  }
-                }),
-          ),
-          Center(
-            child: FutureBuilder(
-                future: getAllProducts(),
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.hasData) {
-                    return ListView.builder(
-                        itemCount: snapshot.data.docs.length,
-                        itemBuilder: (context, index) {
-                          return GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ProductDetailVIew(
-                                      data: snapshot.data.docs[index]),
-                                ),
-                              );
-                            },
-                            child: ListTile(
-                                title: Text(
-                                    "${snapshot.data.docs[index]['name']}"),
-                                //title: Text(snapshot.data.docs[index]['category']),
-                                subtitle: Text(
-                                    "${snapshot.data.docs[index]['price']}"),
-                                trailing: const Icon(Icons.delete)),
-                          );
-                        });
-                  } else {
-                    return const CircularProgressIndicator();
-                  }
-                }),
-          ),
-        ],
+                        },
+                        child: ListTile(
+                            title: Text("${snapshot.data.docs[index]['name']}"),
+                            //title: Text(snapshot.data.docs[index]['category']),
+                            subtitle:
+                                Text("${snapshot.data.docs[index]['price']}"),
+                            trailing: const Icon(Icons.delete)),
+                      );
+                    });
+              } else {
+                return const CircularProgressIndicator();
+              }
+            }),
       ),
     );
   }
