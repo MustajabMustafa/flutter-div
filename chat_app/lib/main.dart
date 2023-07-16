@@ -1,3 +1,5 @@
+import 'package:chat_app/views/DashBoard.dart';
+import 'package:chat_app/views/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       //theme: MyTheme.lightTheme,
       //darkTheme: MyTheme.darkTheme,
-      home: Text("TEDT"),
+      home: Dashboard(),
     );
   }
 }
