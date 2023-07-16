@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD3VDD22RekBIejJW6Dxc_lJwywiaRvNA8',
-    appId: '1:203639427929:android:6cdba49ee45dfe3ad97248',
-    messagingSenderId: '203639427929',
-    projectId: 'chatting-1595a',
-    storageBucket: 'chatting-1595a.appspot.com',
+    apiKey: 'AIzaSyBAHcHM8Q7exJKOFH46xs0d-SkJUAhz1PE',
+    appId: '1:935620278082:android:eb6a079dd1c737b4a3fadb',
+    messagingSenderId: '935620278082',
+    projectId: 'ecommerce-da2d9',
+    storageBucket: 'ecommerce-da2d9.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA3oeaFjTSggPyDEu1p951EjaBSs1O1OMM',
-    appId: '1:203639427929:ios:428d9f08806dcb54d97248',
-    messagingSenderId: '203639427929',
-    projectId: 'chatting-1595a',
-    storageBucket: 'chatting-1595a.appspot.com',
-    iosClientId: '203639427929-409m3fldd98pas53jvicdi337urkdptt.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCFR0iD3JxtV4cOZKBfpPmOedY4ZLT1YrU',
+    appId: '1:935620278082:ios:7de04ee348755fcfa3fadb',
+    messagingSenderId: '935620278082',
+    projectId: 'ecommerce-da2d9',
+    storageBucket: 'ecommerce-da2d9.appspot.com',
+    iosClientId: '935620278082-qp91md6hmsgamn5jr4fl22j1mtkmst1o.apps.googleusercontent.com',
     iosBundleId: 'com.example.chatApp',
   );
 }
